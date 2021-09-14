@@ -60,7 +60,7 @@ $$ f(r) \approx <f(r)> =\int_\Omega f(r^{'})W(r - r^{'}, h)dr^{'} \\
 \approx \sum_{j=1}^N f(r_j)W(r-r_j,h)\Delta V_j \\
 =\sum_{j=1}^N\frac{m_j}{\rho_j}f(x_j)W(r-r^{'},h) $$
 
-注意到，这里有2处近似。  
+注意到，这里有**2处近似**。  
 则粒子$i$处的函数的粒子近似式：
 
 $$ <f(r_i)> \approx \sum_{j=1}^N\frac{m_j}{\rho_j}f(r_j)W_{ij} $$
@@ -133,6 +133,8 @@ $$ \nabla f(r_i) \approx <\nabla f(r_i)> \approx \sum_{j=1}^N\frac{m_j}{\rho_j}f
 
 $$ \nabla^2 f(r_i) \approx <\nabla^2 f(r_i)> \approx \sum_{j=1}^N\frac{m_j}{\rho_j}f(r_j)\nabla^2 W_{ij} $$
 
+思考：$\nabla 1 = 0, \nabla^2 1 = 0$。
+
 #### 密度
 
 $$ <\rho(r_i)> \approx \sum_{j=1}^N\frac{m_j}{\rho_j}\rho(r_j)W_{ij} \\
@@ -144,7 +146,7 @@ $$ <\nabla p(r_i)> \approx \sum_{j=1}^N\frac{m_j}{\rho_j}p(r_j)\nabla W_{ij} $$
 
 #### 粘度
 
-$$ <\mu \nabla^2 \overrightarrow{u}> \approx\sum_{j=1}^N\frac{m_j}{\rho_j}\overrightarrow{u}(r_j)\nabla^2W_{ij} $$
+$$ <\mu \nabla^2 \overrightarrow{u}> \approx \mu\sum_{j=1}^N\frac{m_j}{\rho_j}\overrightarrow{u}(r_j)\nabla^2W_{ij} $$
 
 ## 算法实现
 
@@ -163,4 +165,4 @@ SPH算法的基本流程：
 ## 参考文献
 
 [1] [SPH算法简介: 对我的启蒙](https://blog.csdn.net/liuyunduo/article/details/84098884)
-作者原文链接失效，所以仅采用有效参考链接。
+(说明：作者原文链接失效，所以仅采用有效参考链接。)
