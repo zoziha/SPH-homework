@@ -20,8 +20,8 @@
 ### 获取仓库
 
 ```sh
-git clone https://gitee.com/zoziha/homework-CFD-SPH.git
-cd homework-CFD-SPH
+git clone https://github.com/zoziha/SPH-homework.git
+cd SPH-homework
 ```
 
 ### 演示网页
