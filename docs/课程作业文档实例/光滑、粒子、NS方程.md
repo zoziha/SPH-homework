@@ -58,7 +58,7 @@ $$ f(r) \approx <f(r)> =\int_\Omega f(r^{'})W(r - r^{'}, h)dr^{'} $$
 
 $$ f(r) \approx <f(r)> =\int_\Omega f(r^{'})W(r - r^{'}, h)dr^{'} \\
 \approx \sum_{j=1}^N f(r_j)W(r-r_j,h)\Delta V_j \\
-=\sum_{j=1}^N\frac{m_j}{\rho_j}f(x_j)W(r-r^{'},h) $$
+=\sum_{j=1}^N\frac{m_j}{\rho_j}f(r_j)W(r-r^{'},h) $$
 
 注意到，这里有**2处近似**。  
 则粒子$i$处的函数的粒子近似式：
@@ -164,5 +164,5 @@ SPH算法的基本流程：
 
 ## 参考文献
 
-[1] [SPH算法简介: 对我的启蒙](https://blog.csdn.net/liuyunduo/article/details/84098884)
+[1] [SPH算法简介: 对我的启蒙](https://blog.csdn.net/liuyunduo/article/details/84098884)[EB/OL].(2018-11-15). 
 (说明：作者原文链接失效，所以仅采用有效参考链接。)
