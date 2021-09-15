@@ -7,7 +7,7 @@
 | 版本 | 0.0 |
 | 作者 | 左志华(zoziha) |
 | 邮箱 | zuo.zhihua@qq.com |
-| 演示网页 |  |
+| 演示网页 | https://zoziha.github.io/SPH-homework/ |
 | 许可证 | BSD-3 |
 
 ## 开始
@@ -20,10 +20,10 @@
 ### 获取仓库
 
 ```sh
-git clone https://gitee.com/zoziha/homework-CFD-SPH.git
-cd homework-CFD-SPH
+git clone https://github.com/zoziha/SPH-homework.git
+cd SPH-homework
 ```
 
-### 演示网页
+### 静态演示网页
 
-见网页：[船舶砰击的光滑粒子力学仿真]()。
+见网页：[船舶砰击的光滑粒子力学仿真](https://zoziha.github.io/SPH-homework/)。
