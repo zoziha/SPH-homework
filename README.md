@@ -30,3 +30,4 @@ cd SPH-homework
 ### 链接
 
 + [zoziha/SPH](https://github.com/zoziha/SPH)
++ [SPHERIC](https://www.spheric-sph.org/)
