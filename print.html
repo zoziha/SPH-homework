@@ -1,0 +1,676 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>高等水动力学作业</title>
+                <meta name="robots" content="noindex" />
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="favicon.svg">
+                        <link rel="shortcut icon" href="favicon.png">
+                <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+                <link rel="stylesheet" href="css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> 关于</a></li><li class="chapter-item expanded "><a href="课堂笔记/index.html"><strong aria-hidden="true">2.</strong> 课堂笔记</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="课堂笔记/第一课.html"><strong aria-hidden="true">2.1.</strong> 第一课.md</a></li><li class="chapter-item expanded "><a href="课堂笔记/第二课.html"><strong aria-hidden="true">2.2.</strong> 第二课.md</a></li><li class="chapter-item expanded "><a href="课堂笔记/第三课.html"><strong aria-hidden="true">2.3.</strong> 第三课.md</a></li><li class="chapter-item expanded "><a href="课堂笔记/第四课.html"><strong aria-hidden="true">2.4.</strong> 第四课.md</a></li><li class="chapter-item expanded "><a href="课堂笔记/第五课.html"><strong aria-hidden="true">2.5.</strong> 第五课.md</a></li><li class="chapter-item expanded "><a href="课堂笔记/第六课.html"><strong aria-hidden="true">2.6.</strong> 第六课.md</a></li></ol></li><li class="chapter-item expanded "><a href="课程作业文档实例/index.html"><strong aria-hidden="true">3.</strong> 课程作业文档实例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="课程作业文档实例/研究背景.html"><strong aria-hidden="true">3.1.</strong> 研究背景.md</a></li><li class="chapter-item expanded "><a href="课程作业文档实例/流体控制方程.html"><strong aria-hidden="true">3.2.</strong> 流体控制方程.md</a></li><li class="chapter-item expanded "><a href="课程作业文档实例/光滑、粒子、NS方程.html"><strong aria-hidden="true">3.3.</strong> 光滑、粒子、NS方程.md</a></li><li class="chapter-item expanded "><a href="课程作业文档实例/SPH方法的流体控制方程.html"><strong aria-hidden="true">3.4.</strong> SPH方法的流体控制方程.md</a></li><li class="chapter-item expanded "><a href="课程作业文档实例/直接数值模拟和粒子搜索.html"><strong aria-hidden="true">3.5.</strong> 直接数值模拟和粒子搜索.md</a></li><li class="chapter-item expanded "><a href="课程作业文档实例/有限粒子法.html"><strong aria-hidden="true">3.6.</strong> 有限粒子法.md</a></li><li class="chapter-item expanded "><a href="课程作业文档实例/边界处理和多相模拟.html"><strong aria-hidden="true">3.7.</strong> 边界处理和多相模拟.md</a></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">高等水动力学作业</h1>
+
+                    <div class="right-buttons">
+                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="homework-cfdsph"><a class="header" href="#homework-cfdsph">Homework CFD:SPH</a></h1>
+<p><a href="LICENSE"><img src="https://img.shields.io/github/license/zoziha/SPH-homework?color=pink" alt="BSD-3" /></a>
+<a href="https://github.com/zoziha/SPH-homework/actions"><img src="https://github.com/zoziha/SPH-homework/workflows/mdbook/badge.svg" alt="mdbook" /></a></p>
+<p>2021年，哈尔滨工程大学《高等水动力学》课程作业：“基于SPH方法的舰船波浪砰击模拟”。</p>
+<table><thead><tr><th align="center">项目</th><th align="center">描述</th></tr></thead><tbody>
+<tr><td align="center">版本：</td><td align="center">0.0.2</td></tr>
+<tr><td align="center">作者：</td><td align="center">左志华（zoziha，zuo.zhihua@qq.com）</td></tr>
+<tr><td align="center">网页：</td><td align="center">https://zoziha.github.io/SPH-homework/</td></tr>
+<tr><td align="center">许可证：</td><td align="center">Copyright (c) 2021 左志华</td></tr>
+</tbody></table>
+<h2 id="开始"><a class="header" href="#开始">开始</a></h2>
+<h3 id="软件依赖"><a class="header" href="#软件依赖">软件依赖</a></h3>
+<ul>
+<li>Git</li>
+<li><a href="https://www.rust-lang.org/zh-CN/">Rust</a></li>
+<li><a href="https://github.com/rust-lang/mdBook">mdbook</a></li>
+</ul>
+<h3 id="获取仓库"><a class="header" href="#获取仓库">获取仓库</a></h3>
+<pre><code class="language-sh">git clone https://github.com/zoziha/SPH-homework.git
+cd SPH-homework
+</code></pre>
+<h3 id="使用a-hrefhttpsgithubcomrust-langmdbookmdbooka构建文档"><a class="header" href="#使用a-hrefhttpsgithubcomrust-langmdbookmdbooka构建文档">使用<a href="https://github.com/rust-lang/mdBook">mdbook</a>构建文档</a></h3>
+<p>mdBook是一个从Markdown文件创建现代在线书籍的实用程序。<br>
+你可以通过提供的<code>book.toml</code>文件来构建《高等水动力学作业》。</p>
+<pre><code class="language-sh">cd doc &amp;&amp; mdbook build
+</code></pre>
+<h3 id="链接"><a class="header" href="#链接">链接</a></h3>
+<ul>
+<li><a href="https://github.com/zoziha/SPH">zoziha/SPH</a></li>
+<li><a href="https://www.spheric-sph.org/">SPHERIC</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="课堂笔记"><a class="header" href="#课堂笔记">课堂笔记</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+<h1 id="第一课"><a class="header" href="#第一课">第一课</a></h1>
+<p>课程目标：1. 水动力学原理；2. 研究前沿。</p>
+<p>课程任务：1. 上机操作（8学时）；</p>
+<ol start="2">
+<li>研讨专题</li>
+</ol>
+<ul>
+<li>阅读专著、文献，准备相应的PPT，进行汇报。（时间要求：10分钟+5分钟）</li>
+<li>周一（1-5号学生）、周三（6-10号学生）（10 左志华）</li>
+</ul>
+<p>推荐课本：1. 高等流体力学（上交、科学、哈工大出版社）</p>
+<h1 id="流体本构方程"><a class="header" href="#流体本构方程">流体本构方程</a></h1>
+<p>课程要点：1. 流体基本控制方程；2. 本构关系</p>
+<p>连续介质假设：</p>
+<p>界定区间：<code>[10e-21, 10e-12]</code></p>
+<p>描述流体的宏观物理量：</p>
+<p>密度，稳定，速度，压力等。</p>
+<p>拉式，欧式（转换）：$\frac{DQ}{Dt}=\frac{\partial Q}{\partial t}+\overrightarrow u\cdot\nabla Q$</p>
+<p>物质（随体、全局）导数=局部导数+对流导数。（例子：人的体温）</p>
+<p>三大基本定律：质量守恒（物质）、动量守恒（力守恒，瞬态）、能量守恒（过程）</p>
+<p>补充方程：1. 本构方程；2. 状态方程。</p>
+<p>我的课程题目：船舶砰击的光滑粒子。</p>
+<p>浮体，波浪运动。</p>
+<div style="break-before: page; page-break-before: always;"></div><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+<h1 id="第二课"><a class="header" href="#第二课">第二课</a></h1>
+<p>博士开题：文献综述</p>
+<ol>
+<li>本构方程（减少未知量）；2. 状态方程（增加方程）。  （5个方程，12个未知量）</li>
+</ol>
+<p>理想流体力学与势流理论不同：无旋方有势。</p>
+<p>第二粘性系数（膨胀粘性）：$\lambda$</p>
+<p>流体的<strong>本构关系</strong>反映了<strong>应力</strong>与<strong>变形速率</strong>之间的关系。</p>
+<p>一般运动=平移+转动+线变形+角变形。</p>
+<p>作业要求：1. 研究问题背景；2. 控制方程与假设（数学模型）</p>
+<p>CFD：1. FEM、FVM、FDM、ALE；2. SPH、MPS、PFEM。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="第三课"><a class="header" href="#第三课">第三课</a></h1>
+<p>湍流模型的提出：考虑涡的随机性，直接计算计算量大、存储量大。</p>
+<p>层流，有序；湍流，无序。</p>
+<p>直接求解NS方程（直接数值模拟DNS）：与网格量有关，适应粒子法，粒子更自由。</p>
+<p>湍流尺度：宏观尺度、积分尺度、泰勒尺度、<strong>耗散尺度</strong>、分子自由程。</p>
+<p><strong>通过先验模型，降低计算量</strong>，细节和工程问题需求。</p>
+<p>宏观尺度、生成区、惯性区、耗散区。DNS、LES（空间滤波）、RANS（时间平均）。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="第四课"><a class="header" href="#第四课">第四课</a></h1>
+<p>雷诺应力模型，大涡模拟(LES)。</p>
+<p>涡旋黏性模型(EVE, Eddy viscosity models)
+涡黏性假设：流体微团→分子热运动。
+引入湍流粘性(模型化)系数：Vt
+微团脉动项用分子脉动表示，采用混合长度理论，进行推导，也引入了误差，由实验确定混合长度。</p>
+<p><img src="https://i.loli.net/2021/09/27/rQ9Hc3M1OzlIPqL.png" alt="image.png" /></p>
+<p>0方程使用了混合长度理论和分子热运动。
+1方程使用了混合长度理论。
+2方程，没有使用混合长度理论。</p>
+<p>误差(与精度相似意义)：系统误差。2次近似，包括边界。 </p>
+<p>湍流模型：布置网格，不能太多，不能太少。只要是正确求解，粒子可以自由地游走。 </p>
+<p>难点(关注于粒子，相较于网格法十分注重网格，系离散形式)：边界处理，自适应光滑长度，紧支域粒子搜索🔍(算法，降低时间复杂度) </p>
+<p>设计模式可借鉴！ </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="第五课"><a class="header" href="#第五课">第五课</a></h1>
+<p>水动力学问题基本假设：一般情况下，将水视为不可压缩流体（密度为常数），忽略环境温度变化（无热能交换）。</p>
+<p>数值造波。</p>
+<p>溃坝模型和数值造波SPHysics。</p>
+<p>自由面追踪。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="第六课"><a class="header" href="#第六课">第六课</a></h1>
+<p>使用势流理论求解造波机运动规律，在阻尼区加耗散项（NS方程右边末尾）。</p>
+<p>网格法：1. 直接给入口质点赋属性；2. 造波板的运动；3. 源项造波法。</p>
+<p>规则波与聚焦波。</p>
+<p>势流-粘流耦合方法：避免粘流数值耗散。</p>
+<p><img src="%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/images/3rd-homework.png" alt="课堂研讨" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="课程作业文档实例"><a class="header" href="#课程作业文档实例">课程作业文档实例</a></h1>
+<h2 id="作业集"><a class="header" href="#作业集">作业集</a></h2>
+<p>以下是我（左志华）的课程作业集，点击可下载。</p>
+<ul>
+<li>
+<p><a href="%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A%E6%96%87%E6%A1%A3%E5%AE%9E%E4%BE%8B/../PPT%E6%A8%A1%E6%9D%BF/%E5%93%88%E5%B7%A5%E7%A8%8B%E4%B8%93%E5%B1%9EPPT%E6%A8%A1%E6%9D%BF.pptx">PPT模板</a></p>
+</li>
+<li>
+<p><a href="https://pan.baidu.com/s/1pImU7htwpZtgx4kSxaZmsA">第一次作业：光滑、粒子、NS方程</a>（提取码：1234）</p>
+<ul>
+<li><a href="%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A%E6%96%87%E6%A1%A3%E5%AE%9E%E4%BE%8B/%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A/%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A%EF%BC%9A%E5%85%89%E6%BB%91%E3%80%81%E7%B2%92%E5%AD%90%E3%80%81NS%E6%96%B9%E7%A8%8B.pdf">PDF版本</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://pan.baidu.com/s/1zzffdXE-KIEJW9m3iM1FRw">第二次作业：直接数值模拟和粒子搜索</a>（提取码：1234）</p>
+<ul>
+<li><a href="%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A%E6%96%87%E6%A1%A3%E5%AE%9E%E4%BE%8B/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E4%BD%9C%E4%B8%9A/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E4%BD%9C%E4%B8%9A%EF%BC%9A%E7%9B%B4%E6%8E%A5%E6%95%B0%E5%80%BC%E6%A8%A1%E6%8B%9F%E5%92%8C%E7%B2%92%E5%AD%90%E6%90%9C%E7%B4%A2.pdf">PDF版本</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://pan.baidu.com/s/1lkkEMx-KlAhIcZececma5g">第三次作业：边界处理和多相模拟</a>（提取码：1234）</p>
+<ul>
+<li><a href="%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A%E6%96%87%E6%A1%A3%E5%AE%9E%E4%BE%8B/%E7%AC%AC%E4%B8%89%E6%AC%A1%E4%BD%9C%E4%B8%9A/%E7%AC%AC%E4%B8%89%E6%AC%A1%E4%BD%9C%E4%B8%9A%EF%BC%9A%E8%BE%B9%E7%95%8C%E5%A4%84%E7%90%86%E5%92%8C%E5%A4%9A%E7%9B%B8%E6%A8%A1%E6%8B%9F.pdf">PDF版本</a></li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="研究背景舰船砰击的光滑粒子力学仿真"><a class="header" href="#研究背景舰船砰击的光滑粒子力学仿真">研究背景：舰船砰击的光滑粒子力学仿真</a></h1>
+<h2 id="工程研究背景"><a class="header" href="#工程研究背景">工程研究背景</a></h2>
+<p>工程上，一些船舶高速、砰击工况，还主要依赖实验，光滑粒子流体动力学在这方面有一些可探索的优势。</p>
+<h2 id="学术研究背景"><a class="header" href="#学术研究背景">学术研究背景</a></h2>
+<p>无网格技术是拉式观点的重要实现，不像网格法，光滑粒子流体动力学理论仍存在不完善的地方。</p>
+<h2 id="自身技能发展"><a class="header" href="#自身技能发展">自身技能发展</a></h2>
+<p>从我自身发展上来看，作为一个船舶流体方向的学生，学习一门流体仿真技术是必需的。</p>
+<div style="break-before: page; page-break-before: always;"></div><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+<h1 id="流体控制方程"><a class="header" href="#流体控制方程">流体控制方程</a></h1>
+<p>摘要：1. 守恒与非守恒式控制方程；2. 积分形式与微分形式的重要注释。</p>
+<h2 id="控制方程的通用形式1"><a class="header" href="#控制方程的通用形式1">控制方程的通用形式$^{[1]}$</a></h2>
+<p>如果用$\phi$表示通用变量，则四个基本控制方程（连续方程、动量方程、能量方程、组分方程）可以表达成以下通用形式：</p>
+<p>$$ \frac {\partial (\rho \phi)}{\partial t} + div(\rho u \phi) 
+= div(\Gamma grad \phi) + S $$</p>
+<p>其展开形式为：</p>
+<p>$$  \frac {\partial (\rho \phi)}{\partial t} + \frac {\partial (\rho u \phi)}{\partial x} + 
+\frac {\partial (\rho v \phi)}{\partial y} + \frac {\partial (\rho w \phi)}{\partial z} 
+= \frac {\partial}{\partial x}(\Gamma \frac{\partial \phi}{\partial x}) + 
+\frac {\partial}{\partial y}(\Gamma \frac{\partial \phi}{\partial y}) +
+\frac {\partial}{\partial z}(\Gamma \frac{\partial \phi}{\partial z}) + S $$</p>
+<p>式中，$\phi$为通用变量，可以代表$u, v, w, T$等求解变量；$\Gamma$为广义扩散系数；$S$为广义源项。<br />
+式中各项依次为瞬态项（transient term）、对流项（convective term）、扩散项（diffusive term）和源项（source term）。</p>
+<p>表1 通用控制方程中各符号的具体形式</p>
+<table><thead><tr><th>符号</th><th>$\phi$</th><th>$\Gamma$</th><th>$S$</th></tr></thead><tbody>
+<tr><td>连续方程</td><td>$1$</td><td>$0$</td><td>$0$</td></tr>
+<tr><td>动量方程</td><td>$u_i$</td><td>$\mu$</td><td>$-\frac{\partial p}{\partial x_i} + S_i$</td></tr>
+<tr><td>能量方程</td><td>$T$</td><td>$\frac{k}{c}$</td><td>$S_T$</td></tr>
+<tr><td>组分方程</td><td>$c_S$</td><td>$D_S \rho$</td><td>$S_S$</td></tr>
+</tbody></table>
+<p>这样，我们就只需要考虑通用微分方程（1.19）的数值解，编制求解源码，就足以求解不同类型的流体流动及传热问题。<br />
+对于不同的$\phi$，只要重复调用该程序，并给定$\Gamma$和$S$的适当表达式以及适当的初始条件和边界条件，便可求解。</p>
+<h2 id="非守恒型控制方程1"><a class="header" href="#非守恒型控制方程1">非守恒型控制方程$^{[1]}$</a></h2>
+<p>由通用控制方程可写成：</p>
+<p>$$ \phi \frac {\partial \rho}{\partial t} + \rho \frac {\partial \phi}{\partial t} + 
+\phi \frac {\partial (\rho u)}{\partial x} + \rho u \frac {\partial \phi}{\partial x} + 
+\phi \frac {\partial (\rho v)}{\partial y} + \rho v \frac {\partial \phi}{\partial y} + 
+\phi \frac {\partial (\rho w)}{\partial z} + \rho w \frac {\partial \phi}{\partial z}
+= div(\Gamma grad \phi) + S $$</p>
+<p>根据连续性方程（质量守恒方程，mass conservation equation），</p>
+<p>$$ \frac{\partial \rho}{\partial t} + \frac{\partial(\rho u)}{\partial x} +
+\frac{\partial(\rho v)}{\partial y} + \frac{\partial(\rho w)}{\partial z} = 0 $$</p>
+<p>简化为：</p>
+<p>$$ \rho (\frac {\partial \phi}{\partial t} + 
+u \frac {\partial \phi}{\partial x} + 
+v \frac {\partial \phi}{\partial y} + 
+w \frac {\partial \phi}{\partial z})
+= div(\Gamma grad \phi) + S $$</p>
+<p><em>SPH使用哪一种类型的控制方程是合适的？</em></p>
+<h2 id="积分形式与微分形式的重要注释2"><a class="header" href="#积分形式与微分形式的重要注释2">积分形式与微分形式的重要注释$^{[2]}$</a></h2>
+<p>积分形式与微分形式有着实质性的区别。<br />
+积分形式的方程允许在（空间位置）固定的控制体内出现间断。然而，微分形式的控制方程假定流动参数是可微的，从而必须是连续的。<br />
+在流动包含真实的间断（如激波）时，这一点变得尤其重要。</p>
+<h2 id="参考文献"><a class="header" href="#参考文献">参考文献</a></h2>
+<p>[1] 王福军. 计算流体动力学分析--CFD软件原理与应用[M]. 清华大学出版社, 北京, 2004.<br />
+[2] 约翰 D. 安德森. 计算流体力学基础及其应用[M]. 机械工业出版社, 北京, 2007.</p>
+<div style="break-before: page; page-break-before: always;"></div><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+<h1 id="光滑粒子ns方程流体动力学"><a class="header" href="#光滑粒子ns方程流体动力学">光滑、粒子、NS方程（流体动力学）</a></h1>
+<h2 id="光滑理解为近似但它仍应该叫做光滑"><a class="header" href="#光滑理解为近似但它仍应该叫做光滑">光滑(理解为，近似，但它仍应该叫做光滑)</a></h2>
+<p>对于网格法，在空间布有网格，即可以照顾到所有所需空间。</p>
+<p>而对离散的粒子而言，SPH不是MD，从实际效率上SPH也不能在所需空间内完全布满与真实世界一样密度的真实粒子，所以需要光滑（近似手段），使用伪粒子模拟实际粒子流场特性。</p>
+<p>反过来不难理解，尽管我们将流体视为一个个分散的粒子，但流体毕竟是连续充满整个空间的，流体中每个位置参与运算的值都是由周围一组粒子累加起来的。这就是光滑的来由。</p>
+<hr />
+<p>以上是从文字描述上来看待问题，以下给出数学定义：</p>
+<p>迪利克雷函数 -&gt; 光滑（核）函数。</p>
+<p>$$\delta(r) = \left{
+\begin{array}{ll}
+\infty, &amp; if \ r = 0; \
+0, &amp; otherwise.
+\end{array}
+\right.$$</p>
+<p>满足，$\int{\delta(r)dv}=1$。</p>
+<p>任意函数，满足</p>
+<p>$$ f(r) =\int_\Omega f(r^{'})\delta(r - r^{'})dr^{'} $$</p>
+<p>引入光滑函数，来近似，显然需要满足一些条件让光滑函数保留迪利克雷函数的特质。(SPH习惯用法，核近似用角括弧<code>&lt;&gt;</code>标记)</p>
+<p>$$ f(r) \approx &lt;f(r)&gt; =\int_\Omega f(r^{'})W(r - r^{'}, h)dr^{'} $$</p>
+<p>不得不提，光滑函数$W$常选用偶函数，需要满足：</p>
+<ol>
+<li>正则化条件；</li>
+<li>当光滑长度趋于0时，具有迪利克雷函数性质；</li>
+<li>紧支性；</li>
+<li>偶函数的核函数，具有$h^2$精度或二阶精度。</li>
+</ol>
+<h2 id="粒子亦称为伪粒子"><a class="header" href="#粒子亦称为伪粒子">粒子（亦称为，伪粒子）</a></h2>
+<p>从网格法到粒子法，事情并没有那么美好。</p>
+<p>与SPH核近似法相关的连续积分表示式可转化为支持域内所有粒子叠加求和的离散化形式。</p>
+<p>$$ f(r) \approx &lt;f(r)&gt; =\int_\Omega f(r^{'})W(r - r^{'}, h)dr^{'} \
+\approx \sum_{j=1}^N f(r_j)W(r-r_j,h)\Delta V_j \
+=\sum_{j=1}^N\frac{m_j}{\rho_j}f(r_j)W(r-r^{'},h) $$</p>
+<p>注意到，这里有<strong>2处近似</strong>。<br />
+则粒子$i$处的函数的粒子近似式：</p>
+<p>$$ &lt;f(r_i)&gt; \approx \sum_{j=1}^N\frac{m_j}{\rho_j}f(r_j)W_{ij} $$</p>
+<p>其中，$W_{ij} = W(r_i-r_j, h)$。</p>
+<p>粒子法作为一种无网格法，它也需要面对很多实际问题做出相应的理论和实践解释，这并不比网格法简单。</p>
+<h2 id="n-s方程流体动力学"><a class="header" href="#n-s方程流体动力学">N-S方程（流体动力学）</a></h2>
+<p>3大控制方程 + 补充方程（本构方程，或状态方程），能体会出来，粒子法天然性地满足质量守恒定律（粒子不应该凭空产生，也不该凭空消失）。
+所以问题就变成了求解N-S方程。</p>
+<h3 id="粒子受力分析1"><a class="header" href="#粒子受力分析1">粒子受力分析$^{[1]}$</a></h3>
+<p>SPH算法的基本设想，就是将连续的流体想象成一个个相互作用的微粒，这些例子相互影响，共同形成了复杂的流体运动，对于每个单独的流体微粒，依旧遵循最基本的牛顿第二定律。</p>
+<p>$$\overrightarrow{F}=m\overrightarrow{a}$$</p>
+<p>这是我们分析的基础，在SPH算法里，流体的质量是由流体单元的密度决定的，所以一般用密度代替质量</p>
+<p>$$\overrightarrow{F}=\rho\overrightarrow{a}$$</p>
+<p>这里$F$的量纲发生了变化，需要注意！<br />
+易知：</p>
+<p>$$\overrightarrow{F} = \overrightarrow{F}^{external} + \overrightarrow{F}^{pressue} + \overrightarrow{F}^{viscosity}$$</p>
+<h4 id="重力"><a class="header" href="#重力">重力</a></h4>
+<p>外部力一般是重力。</p>
+<p>$$\overrightarrow{F}^{external} = \rho \overrightarrow{g}$$</p>
+<h4 id="压差作用力"><a class="header" href="#压差作用力">压差作用力</a></h4>
+<p>由流体内部的压力差产生的作用力。</p>
+<p>$$\overrightarrow{F}^{pressue} = -\nabla p$$</p>
+<h4 id="粘性力"><a class="header" href="#粘性力">粘性力</a></h4>
+<p>由粒子之间的速度差引起的。</p>
+<p>$$\overrightarrow{F}^{viscosity} = \mu\nabla^2\overrightarrow{u}$$</p>
+<h4 id="ns方程"><a class="header" href="#ns方程">NS方程</a></h4>
+<p>联立上式，得</p>
+<p>$$\rho \overrightarrow{a} = \rho \overrightarrow{g} -\nabla p + \mu \nabla^2\overrightarrow{u}$$</p>
+<p>加速度形式：</p>
+<p>$$\overrightarrow{a} = \overrightarrow{g} - \frac{\nabla p}{\rho} + \frac{\mu \nabla^2\overrightarrow{u}}{\rho}$$</p>
+<p>实际运算过程中，有时还需要考虑表面张力得影响。</p>
+<p>对应SPH中的NS方程形式为：</p>
+<p>$$\overrightarrow{a}(r_i) = \overrightarrow{g} - \frac{\nabla p(r_i)}{\rho(r_i)} + \frac{\mu \nabla^2\overrightarrow{u}(r_i)}{\rho(r_i)}$$</p>
+<h3 id="sph推导过程"><a class="header" href="#sph推导过程">SPH推导过程</a></h3>
+<p>对于SPH算法来说，基本流程就是这样，根据光滑核函数逐个推出流体中某点的密度，压力，速度相关的累加函数，进而推导出此处的加速度，从而模拟流体的运动趋势。</p>
+<h4 id="插曲标注函数空间导数的粒子近似式"><a class="header" href="#插曲标注函数空间导数的粒子近似式">插曲（标注）：函数空间导数的粒子近似式</a></h4>
+<p>$$ \nabla f(r_i) \approx &lt;\nabla f(r_i)&gt; \approx \sum_{j=1}^N\frac{m_j}{\rho_j}f(r_j)\nabla W_{ij} $$</p>
+<p>$$ \nabla^2 f(r_i) \approx &lt;\nabla^2 f(r_i)&gt; \approx \sum_{j=1}^N\frac{m_j}{\rho_j}f(r_j)\nabla^2 W_{ij} $$</p>
+<p>思考：$\nabla 1 = 0, \nabla^2 1 = 0$。</p>
+<h4 id="密度"><a class="header" href="#密度">密度</a></h4>
+<p>$$ &lt;\rho(r_i)&gt; \approx \sum_{j=1}^N\frac{m_j}{\rho_j}\rho(r_j)W_{ij} \
+= \sum_{j=1}^N m_j W_{ij} $$</p>
+<h4 id="压力"><a class="header" href="#压力">压力</a></h4>
+<p>$$ &lt;\nabla p(r_i)&gt; \approx \sum_{j=1}^N\frac{m_j}{\rho_j}p(r_j)\nabla W_{ij} $$</p>
+<h4 id="粘度"><a class="header" href="#粘度">粘度</a></h4>
+<p>$$ &lt;\mu \nabla^2 \overrightarrow{u}&gt; \approx \mu\sum_{j=1}^N\frac{m_j}{\rho_j}\overrightarrow{u}(r_j)\nabla^2W_{ij} $$</p>
+<h2 id="算法实现"><a class="header" href="#算法实现">算法实现</a></h2>
+<p>SPH算法的基本流程：</p>
+<ol>
+<li>初始化粒子，为每个粒子赋上初始位置</li>
+<li>计算每个粒子的密度</li>
+<li>计算每个粒子的压强</li>
+<li>计算每个粒子的加速度</li>
+<li>根据临界条件调整加速度</li>
+<li>根据加速度计算每个粒子的速度变化</li>
+<li>根据速度计算粒子位置的变化</li>
+<li>绘制粒子</li>
+<li>回到步骤2</li>
+</ol>
+<h2 id="参考文献-1"><a class="header" href="#参考文献-1">参考文献</a></h2>
+<p>[1] <a href="https://blog.csdn.net/liuyunduo/article/details/84098884">SPH算法简介: 对我的启蒙</a>[EB/OL].(2018-11-15). 
+(说明：作者原文链接失效，所以仅采用有效参考链接。)</p>
+<div style="break-before: page; page-break-before: always;"></div><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+<h1 id="sph方法的流体控制方程1"><a class="header" href="#sph方法的流体控制方程1">SPH方法的流体控制方程$^{[1]}$</a></h1>
+<h2 id="密度的粒子近似法连续性方程"><a class="header" href="#密度的粒子近似法连续性方程">密度的粒子近似法（连续性方程）</a></h2>
+<p>粒子法天然满足连续性方程。</p>
+<h3 id="密度求和法"><a class="header" href="#密度求和法">密度求和法</a></h3>
+<p>适用于广义流体力学问题，体现了SPH近似法的本质。</p>
+<p>$$\rho_i = \sum_{j=1}^N{m_jW_{ij}}$$</p>
+<p>修正方案（对等式右端正则化）：</p>
+<p>$$\rho_i = \frac{\sum_{j=1}^N{m_jW_{ij}}}{\sum_{j=1}^N{(\frac{m_j}{\rho_j})W_{ij}}}$$</p>
+<h3 id="连续性密度法"><a class="header" href="#连续性密度法">连续性密度法</a></h3>
+<p>适用于强间断问题的模拟（如爆炸、高速冲击等）。</p>
+<p>$$ \frac{d \rho_i}{d t} = \sum_{j=1}^N{m_jv_{ij}^\beta\cdot\frac{\partial W_{ij}}{\partial x_i^\beta}} $$</p>
+<h2 id="动量方程的粒子近似"><a class="header" href="#动量方程的粒子近似">动量方程的粒子近似</a></h2>
+<p>$$ \frac{dv_i^\alpha}{dt} = -\sum_{j=1}^N m_j \frac{p_i+p_j}{\rho_i\rho_j}\frac{\partial W_{ij}}{\partial x_i^\alpha} + \sum_{j=1}^N m_j\frac{\mu_i\epsilon_i^{\alpha\beta} + \mu_j\epsilon_j^{\alpha\beta}}{\rho_i\rho_j}\frac{\partial W_{ij}}{\partial x_i^\beta} $$</p>
+<p>其中，</p>
+<p>$$ \epsilon_i^{\alpha\beta} = \sum_{j=1}^N\frac{m_j}{\rho_j}v_{ij}^\beta\frac{\partial W_{ij}}{\partial x_i^\alpha} +
+\sum_{j=1}^N\frac{m_j}{\rho_j}v_{ij}^\alpha\frac{\partial W_{ij}}{\partial x_i^\beta} -
+(\frac{2}{3}\sum_{j=1}^N\frac{m_j}{\rho_j}\cdot\nabla_iW_{ij})\delta^{\alpha\beta}$$</p>
+<p>该方法属于直接法，可模拟不同粘度系数的流体。</p>
+<p>[1] G. R. Liu, M. B. Liu. 光滑粒子流体动力学--一种无网格粒子法[M]. 湖南大学出版社, 湖南, 2005. </p>
+<div style="break-before: page; page-break-before: always;"></div><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+<h1 id="直接数值模拟dns和粒子搜索"><a class="header" href="#直接数值模拟dns和粒子搜索">直接数值模拟(DNS)和粒子搜索</a></h1>
+<h2 id="直接数值模拟"><a class="header" href="#直接数值模拟">直接数值模拟</a></h2>
+<p>网格法避免DNS方法的原因，DNS要求的网格数较大，计算量、存储量大。</p>
+<p>采用先验的湍流模型，可以减轻求解NS方程的负担。</p>
+<p>让我好奇的是，SPH方法中，很多学者往往采用DNS方法分析和实现NS方程的求解。</p>
+<p>不过从理论发展阶段上看，一般是先有较为成熟、健壮的DNS实现，才会考虑一些可能的先验模型方案来加速计算。</p>
+<p>关于湍流模型在SPH方法上的应用，还需要进一步的学习考究。</p>
+<h2 id="最近相邻粒子搜索法-nnps"><a class="header" href="#最近相邻粒子搜索法-nnps">最近相邻粒子搜索法, NNPS</a></h2>
+<p>湍流模型是考虑DNS计算所需网格量过大而引入。从减低计算复杂度的角度上，NNPS是SPH法中最耗时的部分，所以我想到介绍NNPS。</p>
+<p>在粒子的相互作用中涉及到两种技术：1. 最近相邻粒子搜索法(NNPS)；2. 粒子对的相互作用。</p>
+<p>不仅要算的对，还需要算的快，还要存储少！</p>
+<p>在《光滑粒子流体动力学--一种无网格方法》中，介绍了三种最近相邻粒子搜索(NNPS)算法：</p>
+<ol>
+<li>全配对搜索法；2. 链表搜索法；3. 树形搜索法。</li>
+</ol>
+<h3 id="全配对搜索法"><a class="header" href="#全配对搜索法">全配对搜索法</a></h3>
+<p>简单而直接，每次搜索都遍历所有粒子。显然，它的时间复杂度是$o(N^2)$。
+它不适宜计算粒子数量庞大的问题，只有在粒子数量较少的情况下才可能被使用。</p>
+<h3 id="链表搜索法"><a class="header" href="#链表搜索法">链表搜索法</a></h3>
+<p>当<strong>粒子近似的光滑长度为空间常量</strong>的情况下，链表搜索法是有效的。在实现链表算法时，在问题域内铺设临时网格。如果临时网格单元内的平均粒子数量足够小，则链表搜索法的时间复杂度是$o(N)$。</p>
+<h3 id="树形搜索法"><a class="header" href="#树形搜索法">树形搜索法</a></h3>
+<p>树形搜索法非常适合求解具有可变光滑长度的问题，这种算法通过粒子的位置来构造有序树（二叉树、四叉树、八叉树）。树形搜索算法的时间复杂度是$o(N\lg{N})$。</p>
+<p>在实际编程实现中，往往可以采用面向对象方法、递归函数等编程手段实现树形搜索法，经有关资料证明，结合树形搜索法的SPH实现是非常高效和健壮的，尤其是用于求解具有可变光滑长度和粒子数量庞大的问题时。</p>
+<h3 id="其它方法"><a class="header" href="#其它方法">其它方法</a></h3>
+<p><a href="https://github.com/InteractiveComputerGraphics/SPlisHSPlasH">SPlisHPlasH</a>是一个使用C++语言编写的SPH实现。</p>
+<p><img src="https://raw.githubusercontent.com/InteractiveComputerGraphics/SPlisHSPlasH/master/doc/images/teaser.gif" alt="image.png" /></p>
+<ul>
+<li>散列哈希</li>
+<li>紧凑哈希（这可能是一项时间复杂度更低的高效算法，且有效支持并行计算，见<a href="https://interactivecomputergraphics.github.io/SPH-Tutorial/slides/01_intro_foundations_neighborhood.pdf">SPH Tutorial</a>）</li>
+<li>...</li>
+</ul>
+<p>以上只是针对时间复杂度的说明，考虑空间复杂度，则对应考虑数据存储的空间。</p>
+<p>以下是一个<a href="https://www.zhihu.com/question/67860343/answer/336070565">知乎上有趣的回答例子</a>：</p>
+<p>老师让我把全班60本作业本按封面上的学号排好。</p>
+<p>于是我灵活运用了快速排序的知识，从本堆中随便抽出一本，把学号比它小的本子放在左边，学号比它大的本子放在右边，再从左边这一堆挑出一本……</p>
+<p>如此一来我的排本子的时间复杂度就从普通人用的插入排序的$o(N^2)$变成了$o(N\lg{N})$。周围的同学投来好奇的目光，我洋洋自得，心想学过算法的我就是不一样。</p>
+<p>快速排序效率果然很高，不一会儿，</p>
+<p>我的桌子就放不下了_(:з」∠)_</p>
+<p>(评论：忽略系数和空间复杂度的后果。)</p>
+<h2 id="粒子搜索实践四叉树"><a class="header" href="#粒子搜索实践四叉树">粒子搜索实践：四叉树</a></h2>
+<ol>
+<li>构建树形结构；</li>
+<li>树形节点查询。</li>
+</ol>
+<h2 id="总结"><a class="header" href="#总结">总结</a></h2>
+<p>粒子数量巨大的时候，如何处理效率问题（计算效率、数据存储和交互）？应该还是从原理上来处理：光滑粒子。</p>
+<h2 id="参考文献-2"><a class="header" href="#参考文献-2">参考文献</a></h2>
+<p>[1] <a href="https://zhuanlan.zhihu.com/p/54083102">CFD基础理论02：粒子法基本概念</a><br />
+[2] <a href="https://www.zhihu.com/question/67860343/answer/336070565">你在生活中用过最高级的算法知识是什么？</a><br />
+[3] <a href="https://blog.csdn.net/weixin_43940314/article/details/119209203">【流体力学】加和不加湍流模型在NS方程上的体现</a><br />
+[4] <a href="https://zhuanlan.zhihu.com/p/363054480">【笔记】SPH流体模拟基础</a><br />
+[5] G. R. Liu, M. B. Liu. 光滑粒子流体动力学--一种无网格粒子法[M]. 湖南大学出版社, 湖南, 2005. </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="有限粒子法"><a class="header" href="#有限粒子法">有限粒子法</a></h1>
+<p>光滑粒子的发展至今仍存在一定的数值缺陷，其中在粒子缺失较明显的模型边界或者物理量变换较大的非连续性界面附近表现出的核估计精度不足尤为显著。</p>
+<p>研究发现，可以通过提高核函数的一致性提高边界区域的计算精度。</p>
+<ul>
+<li>Liu等在SPH的基础上通过重构核函数提出了再生核质点法(RK-PM)；</li>
+<li>Chen等以泰勒级数展开为基础提出了一种对SPH估计式进行正则化的方法，即修正光滑粒子法(CSPM)，并得到了成功应用；</li>
+<li>Liu等基于泰勒级数展开提出了有限粒子法(FPM)。</li>
+</ul>
+<p>优点：相比于传统的SPH方法，FPM在核函数的选取上较宽松，边界区域计算精度高，高阶拓展性强。相比于CSPM，FPM可以同时估计核函数及其导数值，一定程度上降低了CSPM中缔结导数用于高阶导数计算而产生的累积误差。</p>
+<p>缺点：在处理不连续问题时，若与连续体内部处理方法一致，算法的准确性会大大降低；求解线性方程组一定程度上增加了计算复杂度，计算时间较长；系数矩阵是否奇异不可控，影响计算稳定性。因而使用FPM方法时需对界面进行更精细的处理。</p>
+<p align="right"> ——摘录至《一种考虑界面不连续的改进的有限粒子法》</p>
+<div style="break-before: page; page-break-before: always;"></div><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+<h1 id="边界处理和多相模拟"><a class="header" href="#边界处理和多相模拟">边界处理和多相模拟</a></h1>
+<p>题外话：因为最近导师交给我一个小工程做，这次的内容可能不算丰富。原本想展示一些SPHysics软件的运行结果，比较生动形象。</p>
+<p>本周课程讲到的是数值造波的一些技术：大体的思路是采用势流理论的解析解，赋值给粘流造波数值计算。</p>
+<p>在SPH方法中，造波就意味着离不开边界处理，比如造波机就是流体求解域的边界。课程老师希望我尝试介绍一下现在SPH法中的一些多相模拟技术。</p>
+<h2 id="边界处理"><a class="header" href="#边界处理">边界处理</a></h2>
+<p>由于SPH方法使用粒子的离散形式，在边界处，粒子近似将出现紧支域被边界截断的情况。如下图：<br>
+<img src="%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A%E6%96%87%E6%A1%A3%E5%AE%9E%E4%BE%8B/images/%E8%BE%B9%E7%95%8C%E6%A0%B8%E8%BF%91%E4%BC%BC.png" alt="粒子法的边界问题" /></p>
+<h3 id="三种典型边界条件"><a class="header" href="#三种典型边界条件">三种典型边界条件</a></h3>
+<ol>
+<li>壁面边界（至少满足不可穿透边界条件）：自由滑移边界、无滑移边界；</li>
+<li>自由液面边界；</li>
+<li>流入流出边界。</li>
+</ol>
+<p>壁面边界的处理一直是SPH方法发展过程中需要重点解决的问题。欧洲光滑粒子研究兴趣共同体（SPHERIC）将固壁边界的处理列为几大挑战性问题之一。</p>
+<h3 id="sph边界处理方法"><a class="header" href="#sph边界处理方法">SPH边界处理方法</a></h3>
+<ol>
+<li>动态边界；</li>
+<li>排斥力边界；</li>
+<li>周期开放边界；</li>
+<li>等等。</li>
+</ol>
+<h4 id="动态边界"><a class="header" href="#动态边界">动态边界</a></h4>
+<p>边界粒子被要求满足与流体粒子相同的公式，比如连续性方程、动量方程、能量方程和状态方程。<br>
+但是它们不需要随着动量方程时间步移动，它们应该保持其边界预设的运动状态。</p>
+<h4 id="排斥力边界"><a class="header" href="#排斥力边界">排斥力边界</a></h4>
+<p>排斥力边界被设计，确保流体粒子不能穿透固体边界。</p>
+<h4 id="周期开放边界"><a class="header" href="#周期开放边界">周期开放边界</a></h4>
+<h2 id="多相模拟"><a class="header" href="#多相模拟">多相模拟</a></h2>
+<h3 id="自由液面流动"><a class="header" href="#自由液面流动">自由液面流动</a></h3>
+<p>2009年，Colagrossi等人从理论的角度证明了弱可压SPH方法在自由液面处能自动满足自由液面边界条件，且自由液面处核函数的截断不影响自由液面模拟的精度。</p>
+<h3 id="流固耦合动力学"><a class="header" href="#流固耦合动力学">流固耦合动力学</a></h3>
+<p>流固耦合动力学问题中最主要的难点在于刚体或弹性体运动与流场运动的耦合。
+SPH方法在模拟流固耦合问题时有两类方法，分别是：<br>
+（1）采用纯粒子法对流场和固体结构进行统一建模；<br>
+（2）SPH方法与其它数值方法（如有限元）耦合计算。</p>
+<p>SPH方法在模拟剧烈流固耦合问题中已经取得了很大进步，但是考虑结果表明边界层效应的流固耦合SPH方法较为少见。</p>
+<p>采取自适应粒子细化、聚合技术，在提高局部计算精度的基础上，减小总计算量，为较大规模船舶与海洋工程水动力学问题的数值计算提供技术支撑。</p>
+<h3 id="多相流"><a class="header" href="#多相流">多相流</a></h3>
+<p>SPH方法基于拉格朗日观点，在模拟多相流问题时无需特意追踪水气界面，而且模拟多相流界面的破碎和融合时，无需额外的人工干预。</p>
+<p>在物体入水研究中，空气的卷入对入水过程的运动和载荷特性有较大的影响。而且，在多相流SPH方法中，受空气粒子密度较小的影响，时间步会比单相流（水）SPH方法中小很多。</p>
+<p>比如，时间步长满足${^{[3]}}$，</p>
+<p>$$\Delta{t} \le \lambda\frac{\rm{particle\ diameter}}{\max{v_i}}$$</p>
+<ul>
+<li>比粒子速度大得多；</li>
+<li>根据稳定性、精度需求尽量小；</li>
+<li>CFL（Courant–Friedrichs–Lewy）条件是上界；</li>
+<li>推荐尺度选择：$\lambda \approx 0.4$；</li>
+<li>在模拟过程中自适应时间步。</li>
+</ul>
+<h2 id="解决方案"><a class="header" href="#解决方案">解决方案</a></h2>
+<p>粒子自适应细化、聚合技术。采取自适应粒子细化、聚合技术，在提高局部计算精度的基础上，减小总计算量，为较大规模船舶与海洋工程水动力学问题的数值计算提供技术支撑。</p>
+<h2 id="参考文献-3"><a class="header" href="#参考文献-3">参考文献</a></h2>
+<p>[1] 孙鹏楠. 物体与自由液面耦合作用的光滑粒子流体动力学方法研究.<br>
+[2] SPHysics.<br>
+[3] <a href="https://interactivecomputergraphics.github.io/SPH-Tutorial/slides/01_intro_foundations_neighborhood.pdf">Introduction, Foundations, Neighborhood Search. Page42</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+                        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+                
+    </body>
+</html>

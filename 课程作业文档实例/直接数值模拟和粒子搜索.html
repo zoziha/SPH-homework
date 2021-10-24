@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>直接数值模拟和粒子搜索.md - 高等水动力学作业</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../favicon.svg">
+                        <link rel="shortcut icon" href="../favicon.png">
+                <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+                <link rel="stylesheet" href="../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> 关于</a></li><li class="chapter-item expanded "><a href="../课堂笔记/index.html"><strong aria-hidden="true">2.</strong> 课堂笔记</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../课堂笔记/第一课.html"><strong aria-hidden="true">2.1.</strong> 第一课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第二课.html"><strong aria-hidden="true">2.2.</strong> 第二课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第三课.html"><strong aria-hidden="true">2.3.</strong> 第三课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第四课.html"><strong aria-hidden="true">2.4.</strong> 第四课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第五课.html"><strong aria-hidden="true">2.5.</strong> 第五课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第六课.html"><strong aria-hidden="true">2.6.</strong> 第六课.md</a></li></ol></li><li class="chapter-item expanded "><a href="../课程作业文档实例/index.html"><strong aria-hidden="true">3.</strong> 课程作业文档实例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../课程作业文档实例/研究背景.html"><strong aria-hidden="true">3.1.</strong> 研究背景.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/流体控制方程.html"><strong aria-hidden="true">3.2.</strong> 流体控制方程.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/光滑、粒子、NS方程.html"><strong aria-hidden="true">3.3.</strong> 光滑、粒子、NS方程.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/SPH方法的流体控制方程.html"><strong aria-hidden="true">3.4.</strong> SPH方法的流体控制方程.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/直接数值模拟和粒子搜索.html" class="active"><strong aria-hidden="true">3.5.</strong> 直接数值模拟和粒子搜索.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/有限粒子法.html"><strong aria-hidden="true">3.6.</strong> 有限粒子法.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/边界处理和多相模拟.html"><strong aria-hidden="true">3.7.</strong> 边界处理和多相模拟.md</a></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">高等水动力学作业</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+<h1 id="直接数值模拟dns和粒子搜索"><a class="header" href="#直接数值模拟dns和粒子搜索">直接数值模拟(DNS)和粒子搜索</a></h1>
+<h2 id="直接数值模拟"><a class="header" href="#直接数值模拟">直接数值模拟</a></h2>
+<p>网格法避免DNS方法的原因，DNS要求的网格数较大，计算量、存储量大。</p>
+<p>采用先验的湍流模型，可以减轻求解NS方程的负担。</p>
+<p>让我好奇的是，SPH方法中，很多学者往往采用DNS方法分析和实现NS方程的求解。</p>
+<p>不过从理论发展阶段上看，一般是先有较为成熟、健壮的DNS实现，才会考虑一些可能的先验模型方案来加速计算。</p>
+<p>关于湍流模型在SPH方法上的应用，还需要进一步的学习考究。</p>
+<h2 id="最近相邻粒子搜索法-nnps"><a class="header" href="#最近相邻粒子搜索法-nnps">最近相邻粒子搜索法, NNPS</a></h2>
+<p>湍流模型是考虑DNS计算所需网格量过大而引入。从减低计算复杂度的角度上，NNPS是SPH法中最耗时的部分，所以我想到介绍NNPS。</p>
+<p>在粒子的相互作用中涉及到两种技术：1. 最近相邻粒子搜索法(NNPS)；2. 粒子对的相互作用。</p>
+<p>不仅要算的对，还需要算的快，还要存储少！</p>
+<p>在《光滑粒子流体动力学--一种无网格方法》中，介绍了三种最近相邻粒子搜索(NNPS)算法：</p>
+<ol>
+<li>全配对搜索法；2. 链表搜索法；3. 树形搜索法。</li>
+</ol>
+<h3 id="全配对搜索法"><a class="header" href="#全配对搜索法">全配对搜索法</a></h3>
+<p>简单而直接，每次搜索都遍历所有粒子。显然，它的时间复杂度是$o(N^2)$。
+它不适宜计算粒子数量庞大的问题，只有在粒子数量较少的情况下才可能被使用。</p>
+<h3 id="链表搜索法"><a class="header" href="#链表搜索法">链表搜索法</a></h3>
+<p>当<strong>粒子近似的光滑长度为空间常量</strong>的情况下，链表搜索法是有效的。在实现链表算法时，在问题域内铺设临时网格。如果临时网格单元内的平均粒子数量足够小，则链表搜索法的时间复杂度是$o(N)$。</p>
+<h3 id="树形搜索法"><a class="header" href="#树形搜索法">树形搜索法</a></h3>
+<p>树形搜索法非常适合求解具有可变光滑长度的问题，这种算法通过粒子的位置来构造有序树（二叉树、四叉树、八叉树）。树形搜索算法的时间复杂度是$o(N\lg{N})$。</p>
+<p>在实际编程实现中，往往可以采用面向对象方法、递归函数等编程手段实现树形搜索法，经有关资料证明，结合树形搜索法的SPH实现是非常高效和健壮的，尤其是用于求解具有可变光滑长度和粒子数量庞大的问题时。</p>
+<h3 id="其它方法"><a class="header" href="#其它方法">其它方法</a></h3>
+<p><a href="https://github.com/InteractiveComputerGraphics/SPlisHSPlasH">SPlisHPlasH</a>是一个使用C++语言编写的SPH实现。</p>
+<p><img src="https://raw.githubusercontent.com/InteractiveComputerGraphics/SPlisHSPlasH/master/doc/images/teaser.gif" alt="image.png" /></p>
+<ul>
+<li>散列哈希</li>
+<li>紧凑哈希（这可能是一项时间复杂度更低的高效算法，且有效支持并行计算，见<a href="https://interactivecomputergraphics.github.io/SPH-Tutorial/slides/01_intro_foundations_neighborhood.pdf">SPH Tutorial</a>）</li>
+<li>...</li>
+</ul>
+<p>以上只是针对时间复杂度的说明，考虑空间复杂度，则对应考虑数据存储的空间。</p>
+<p>以下是一个<a href="https://www.zhihu.com/question/67860343/answer/336070565">知乎上有趣的回答例子</a>：</p>
+<p>老师让我把全班60本作业本按封面上的学号排好。</p>
+<p>于是我灵活运用了快速排序的知识，从本堆中随便抽出一本，把学号比它小的本子放在左边，学号比它大的本子放在右边，再从左边这一堆挑出一本……</p>
+<p>如此一来我的排本子的时间复杂度就从普通人用的插入排序的$o(N^2)$变成了$o(N\lg{N})$。周围的同学投来好奇的目光，我洋洋自得，心想学过算法的我就是不一样。</p>
+<p>快速排序效率果然很高，不一会儿，</p>
+<p>我的桌子就放不下了_(:з」∠)_</p>
+<p>(评论：忽略系数和空间复杂度的后果。)</p>
+<h2 id="粒子搜索实践四叉树"><a class="header" href="#粒子搜索实践四叉树">粒子搜索实践：四叉树</a></h2>
+<ol>
+<li>构建树形结构；</li>
+<li>树形节点查询。</li>
+</ol>
+<h2 id="总结"><a class="header" href="#总结">总结</a></h2>
+<p>粒子数量巨大的时候，如何处理效率问题（计算效率、数据存储和交互）？应该还是从原理上来处理：光滑粒子。</p>
+<h2 id="参考文献"><a class="header" href="#参考文献">参考文献</a></h2>
+<p>[1] <a href="https://zhuanlan.zhihu.com/p/54083102">CFD基础理论02：粒子法基本概念</a><br />
+[2] <a href="https://www.zhihu.com/question/67860343/answer/336070565">你在生活中用过最高级的算法知识是什么？</a><br />
+[3] <a href="https://blog.csdn.net/weixin_43940314/article/details/119209203">【流体力学】加和不加湍流模型在NS方程上的体现</a><br />
+[4] <a href="https://zhuanlan.zhihu.com/p/363054480">【笔记】SPH流体模拟基础</a><br />
+[5] G. R. Liu, M. B. Liu. 光滑粒子流体动力学--一种无网格粒子法[M]. 湖南大学出版社, 湖南, 2005. </p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../课程作业文档实例/SPH方法的流体控制方程.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../课程作业文档实例/有限粒子法.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../课程作业文档实例/SPH方法的流体控制方程.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../课程作业文档实例/有限粒子法.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>

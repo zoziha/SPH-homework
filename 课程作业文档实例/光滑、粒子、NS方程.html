@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>光滑、粒子、NS方程.md - 高等水动力学作业</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../favicon.svg">
+                        <link rel="shortcut icon" href="../favicon.png">
+                <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+                <link rel="stylesheet" href="../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> 关于</a></li><li class="chapter-item expanded "><a href="../课堂笔记/index.html"><strong aria-hidden="true">2.</strong> 课堂笔记</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../课堂笔记/第一课.html"><strong aria-hidden="true">2.1.</strong> 第一课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第二课.html"><strong aria-hidden="true">2.2.</strong> 第二课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第三课.html"><strong aria-hidden="true">2.3.</strong> 第三课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第四课.html"><strong aria-hidden="true">2.4.</strong> 第四课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第五课.html"><strong aria-hidden="true">2.5.</strong> 第五课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第六课.html"><strong aria-hidden="true">2.6.</strong> 第六课.md</a></li></ol></li><li class="chapter-item expanded "><a href="../课程作业文档实例/index.html"><strong aria-hidden="true">3.</strong> 课程作业文档实例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../课程作业文档实例/研究背景.html"><strong aria-hidden="true">3.1.</strong> 研究背景.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/流体控制方程.html"><strong aria-hidden="true">3.2.</strong> 流体控制方程.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/光滑、粒子、NS方程.html" class="active"><strong aria-hidden="true">3.3.</strong> 光滑、粒子、NS方程.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/SPH方法的流体控制方程.html"><strong aria-hidden="true">3.4.</strong> SPH方法的流体控制方程.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/直接数值模拟和粒子搜索.html"><strong aria-hidden="true">3.5.</strong> 直接数值模拟和粒子搜索.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/有限粒子法.html"><strong aria-hidden="true">3.6.</strong> 有限粒子法.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/边界处理和多相模拟.html"><strong aria-hidden="true">3.7.</strong> 边界处理和多相模拟.md</a></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">高等水动力学作业</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+<h1 id="光滑粒子ns方程流体动力学"><a class="header" href="#光滑粒子ns方程流体动力学">光滑、粒子、NS方程（流体动力学）</a></h1>
+<h2 id="光滑理解为近似但它仍应该叫做光滑"><a class="header" href="#光滑理解为近似但它仍应该叫做光滑">光滑(理解为，近似，但它仍应该叫做光滑)</a></h2>
+<p>对于网格法，在空间布有网格，即可以照顾到所有所需空间。</p>
+<p>而对离散的粒子而言，SPH不是MD，从实际效率上SPH也不能在所需空间内完全布满与真实世界一样密度的真实粒子，所以需要光滑（近似手段），使用伪粒子模拟实际粒子流场特性。</p>
+<p>反过来不难理解，尽管我们将流体视为一个个分散的粒子，但流体毕竟是连续充满整个空间的，流体中每个位置参与运算的值都是由周围一组粒子累加起来的。这就是光滑的来由。</p>
+<hr />
+<p>以上是从文字描述上来看待问题，以下给出数学定义：</p>
+<p>迪利克雷函数 -&gt; 光滑（核）函数。</p>
+<p>$$\delta(r) = \left{
+\begin{array}{ll}
+\infty, &amp; if \ r = 0; \
+0, &amp; otherwise.
+\end{array}
+\right.$$</p>
+<p>满足，$\int{\delta(r)dv}=1$。</p>
+<p>任意函数，满足</p>
+<p>$$ f(r) =\int_\Omega f(r^{'})\delta(r - r^{'})dr^{'} $$</p>
+<p>引入光滑函数，来近似，显然需要满足一些条件让光滑函数保留迪利克雷函数的特质。(SPH习惯用法，核近似用角括弧<code>&lt;&gt;</code>标记)</p>
+<p>$$ f(r) \approx &lt;f(r)&gt; =\int_\Omega f(r^{'})W(r - r^{'}, h)dr^{'} $$</p>
+<p>不得不提，光滑函数$W$常选用偶函数，需要满足：</p>
+<ol>
+<li>正则化条件；</li>
+<li>当光滑长度趋于0时，具有迪利克雷函数性质；</li>
+<li>紧支性；</li>
+<li>偶函数的核函数，具有$h^2$精度或二阶精度。</li>
+</ol>
+<h2 id="粒子亦称为伪粒子"><a class="header" href="#粒子亦称为伪粒子">粒子（亦称为，伪粒子）</a></h2>
+<p>从网格法到粒子法，事情并没有那么美好。</p>
+<p>与SPH核近似法相关的连续积分表示式可转化为支持域内所有粒子叠加求和的离散化形式。</p>
+<p>$$ f(r) \approx &lt;f(r)&gt; =\int_\Omega f(r^{'})W(r - r^{'}, h)dr^{'} \
+\approx \sum_{j=1}^N f(r_j)W(r-r_j,h)\Delta V_j \
+=\sum_{j=1}^N\frac{m_j}{\rho_j}f(r_j)W(r-r^{'},h) $$</p>
+<p>注意到，这里有<strong>2处近似</strong>。<br />
+则粒子$i$处的函数的粒子近似式：</p>
+<p>$$ &lt;f(r_i)&gt; \approx \sum_{j=1}^N\frac{m_j}{\rho_j}f(r_j)W_{ij} $$</p>
+<p>其中，$W_{ij} = W(r_i-r_j, h)$。</p>
+<p>粒子法作为一种无网格法，它也需要面对很多实际问题做出相应的理论和实践解释，这并不比网格法简单。</p>
+<h2 id="n-s方程流体动力学"><a class="header" href="#n-s方程流体动力学">N-S方程（流体动力学）</a></h2>
+<p>3大控制方程 + 补充方程（本构方程，或状态方程），能体会出来，粒子法天然性地满足质量守恒定律（粒子不应该凭空产生，也不该凭空消失）。
+所以问题就变成了求解N-S方程。</p>
+<h3 id="粒子受力分析1"><a class="header" href="#粒子受力分析1">粒子受力分析$^{[1]}$</a></h3>
+<p>SPH算法的基本设想，就是将连续的流体想象成一个个相互作用的微粒，这些例子相互影响，共同形成了复杂的流体运动，对于每个单独的流体微粒，依旧遵循最基本的牛顿第二定律。</p>
+<p>$$\overrightarrow{F}=m\overrightarrow{a}$$</p>
+<p>这是我们分析的基础，在SPH算法里，流体的质量是由流体单元的密度决定的，所以一般用密度代替质量</p>
+<p>$$\overrightarrow{F}=\rho\overrightarrow{a}$$</p>
+<p>这里$F$的量纲发生了变化，需要注意！<br />
+易知：</p>
+<p>$$\overrightarrow{F} = \overrightarrow{F}^{external} + \overrightarrow{F}^{pressue} + \overrightarrow{F}^{viscosity}$$</p>
+<h4 id="重力"><a class="header" href="#重力">重力</a></h4>
+<p>外部力一般是重力。</p>
+<p>$$\overrightarrow{F}^{external} = \rho \overrightarrow{g}$$</p>
+<h4 id="压差作用力"><a class="header" href="#压差作用力">压差作用力</a></h4>
+<p>由流体内部的压力差产生的作用力。</p>
+<p>$$\overrightarrow{F}^{pressue} = -\nabla p$$</p>
+<h4 id="粘性力"><a class="header" href="#粘性力">粘性力</a></h4>
+<p>由粒子之间的速度差引起的。</p>
+<p>$$\overrightarrow{F}^{viscosity} = \mu\nabla^2\overrightarrow{u}$$</p>
+<h4 id="ns方程"><a class="header" href="#ns方程">NS方程</a></h4>
+<p>联立上式，得</p>
+<p>$$\rho \overrightarrow{a} = \rho \overrightarrow{g} -\nabla p + \mu \nabla^2\overrightarrow{u}$$</p>
+<p>加速度形式：</p>
+<p>$$\overrightarrow{a} = \overrightarrow{g} - \frac{\nabla p}{\rho} + \frac{\mu \nabla^2\overrightarrow{u}}{\rho}$$</p>
+<p>实际运算过程中，有时还需要考虑表面张力得影响。</p>
+<p>对应SPH中的NS方程形式为：</p>
+<p>$$\overrightarrow{a}(r_i) = \overrightarrow{g} - \frac{\nabla p(r_i)}{\rho(r_i)} + \frac{\mu \nabla^2\overrightarrow{u}(r_i)}{\rho(r_i)}$$</p>
+<h3 id="sph推导过程"><a class="header" href="#sph推导过程">SPH推导过程</a></h3>
+<p>对于SPH算法来说，基本流程就是这样，根据光滑核函数逐个推出流体中某点的密度，压力，速度相关的累加函数，进而推导出此处的加速度，从而模拟流体的运动趋势。</p>
+<h4 id="插曲标注函数空间导数的粒子近似式"><a class="header" href="#插曲标注函数空间导数的粒子近似式">插曲（标注）：函数空间导数的粒子近似式</a></h4>
+<p>$$ \nabla f(r_i) \approx &lt;\nabla f(r_i)&gt; \approx \sum_{j=1}^N\frac{m_j}{\rho_j}f(r_j)\nabla W_{ij} $$</p>
+<p>$$ \nabla^2 f(r_i) \approx &lt;\nabla^2 f(r_i)&gt; \approx \sum_{j=1}^N\frac{m_j}{\rho_j}f(r_j)\nabla^2 W_{ij} $$</p>
+<p>思考：$\nabla 1 = 0, \nabla^2 1 = 0$。</p>
+<h4 id="密度"><a class="header" href="#密度">密度</a></h4>
+<p>$$ &lt;\rho(r_i)&gt; \approx \sum_{j=1}^N\frac{m_j}{\rho_j}\rho(r_j)W_{ij} \
+= \sum_{j=1}^N m_j W_{ij} $$</p>
+<h4 id="压力"><a class="header" href="#压力">压力</a></h4>
+<p>$$ &lt;\nabla p(r_i)&gt; \approx \sum_{j=1}^N\frac{m_j}{\rho_j}p(r_j)\nabla W_{ij} $$</p>
+<h4 id="粘度"><a class="header" href="#粘度">粘度</a></h4>
+<p>$$ &lt;\mu \nabla^2 \overrightarrow{u}&gt; \approx \mu\sum_{j=1}^N\frac{m_j}{\rho_j}\overrightarrow{u}(r_j)\nabla^2W_{ij} $$</p>
+<h2 id="算法实现"><a class="header" href="#算法实现">算法实现</a></h2>
+<p>SPH算法的基本流程：</p>
+<ol>
+<li>初始化粒子，为每个粒子赋上初始位置</li>
+<li>计算每个粒子的密度</li>
+<li>计算每个粒子的压强</li>
+<li>计算每个粒子的加速度</li>
+<li>根据临界条件调整加速度</li>
+<li>根据加速度计算每个粒子的速度变化</li>
+<li>根据速度计算粒子位置的变化</li>
+<li>绘制粒子</li>
+<li>回到步骤2</li>
+</ol>
+<h2 id="参考文献"><a class="header" href="#参考文献">参考文献</a></h2>
+<p>[1] <a href="https://blog.csdn.net/liuyunduo/article/details/84098884">SPH算法简介: 对我的启蒙</a>[EB/OL].(2018-11-15). 
+(说明：作者原文链接失效，所以仅采用有效参考链接。)</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../课程作业文档实例/流体控制方程.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../课程作业文档实例/SPH方法的流体控制方程.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../课程作业文档实例/流体控制方程.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../课程作业文档实例/SPH方法的流体控制方程.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>

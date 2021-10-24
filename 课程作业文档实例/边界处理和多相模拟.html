@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>边界处理和多相模拟.md - 高等水动力学作业</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../favicon.svg">
+                        <link rel="shortcut icon" href="../favicon.png">
+                <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+                <link rel="stylesheet" href="../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> 关于</a></li><li class="chapter-item expanded "><a href="../课堂笔记/index.html"><strong aria-hidden="true">2.</strong> 课堂笔记</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../课堂笔记/第一课.html"><strong aria-hidden="true">2.1.</strong> 第一课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第二课.html"><strong aria-hidden="true">2.2.</strong> 第二课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第三课.html"><strong aria-hidden="true">2.3.</strong> 第三课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第四课.html"><strong aria-hidden="true">2.4.</strong> 第四课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第五课.html"><strong aria-hidden="true">2.5.</strong> 第五课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第六课.html"><strong aria-hidden="true">2.6.</strong> 第六课.md</a></li></ol></li><li class="chapter-item expanded "><a href="../课程作业文档实例/index.html"><strong aria-hidden="true">3.</strong> 课程作业文档实例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../课程作业文档实例/研究背景.html"><strong aria-hidden="true">3.1.</strong> 研究背景.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/流体控制方程.html"><strong aria-hidden="true">3.2.</strong> 流体控制方程.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/光滑、粒子、NS方程.html"><strong aria-hidden="true">3.3.</strong> 光滑、粒子、NS方程.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/SPH方法的流体控制方程.html"><strong aria-hidden="true">3.4.</strong> SPH方法的流体控制方程.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/直接数值模拟和粒子搜索.html"><strong aria-hidden="true">3.5.</strong> 直接数值模拟和粒子搜索.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/有限粒子法.html"><strong aria-hidden="true">3.6.</strong> 有限粒子法.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/边界处理和多相模拟.html" class="active"><strong aria-hidden="true">3.7.</strong> 边界处理和多相模拟.md</a></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">高等水动力学作业</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+<h1 id="边界处理和多相模拟"><a class="header" href="#边界处理和多相模拟">边界处理和多相模拟</a></h1>
+<p>题外话：因为最近导师交给我一个小工程做，这次的内容可能不算丰富。原本想展示一些SPHysics软件的运行结果，比较生动形象。</p>
+<p>本周课程讲到的是数值造波的一些技术：大体的思路是采用势流理论的解析解，赋值给粘流造波数值计算。</p>
+<p>在SPH方法中，造波就意味着离不开边界处理，比如造波机就是流体求解域的边界。课程老师希望我尝试介绍一下现在SPH法中的一些多相模拟技术。</p>
+<h2 id="边界处理"><a class="header" href="#边界处理">边界处理</a></h2>
+<p>由于SPH方法使用粒子的离散形式，在边界处，粒子近似将出现紧支域被边界截断的情况。如下图：<br>
+<img src="images/%E8%BE%B9%E7%95%8C%E6%A0%B8%E8%BF%91%E4%BC%BC.png" alt="粒子法的边界问题" /></p>
+<h3 id="三种典型边界条件"><a class="header" href="#三种典型边界条件">三种典型边界条件</a></h3>
+<ol>
+<li>壁面边界（至少满足不可穿透边界条件）：自由滑移边界、无滑移边界；</li>
+<li>自由液面边界；</li>
+<li>流入流出边界。</li>
+</ol>
+<p>壁面边界的处理一直是SPH方法发展过程中需要重点解决的问题。欧洲光滑粒子研究兴趣共同体（SPHERIC）将固壁边界的处理列为几大挑战性问题之一。</p>
+<h3 id="sph边界处理方法"><a class="header" href="#sph边界处理方法">SPH边界处理方法</a></h3>
+<ol>
+<li>动态边界；</li>
+<li>排斥力边界；</li>
+<li>周期开放边界；</li>
+<li>等等。</li>
+</ol>
+<h4 id="动态边界"><a class="header" href="#动态边界">动态边界</a></h4>
+<p>边界粒子被要求满足与流体粒子相同的公式，比如连续性方程、动量方程、能量方程和状态方程。<br>
+但是它们不需要随着动量方程时间步移动，它们应该保持其边界预设的运动状态。</p>
+<h4 id="排斥力边界"><a class="header" href="#排斥力边界">排斥力边界</a></h4>
+<p>排斥力边界被设计，确保流体粒子不能穿透固体边界。</p>
+<h4 id="周期开放边界"><a class="header" href="#周期开放边界">周期开放边界</a></h4>
+<h2 id="多相模拟"><a class="header" href="#多相模拟">多相模拟</a></h2>
+<h3 id="自由液面流动"><a class="header" href="#自由液面流动">自由液面流动</a></h3>
+<p>2009年，Colagrossi等人从理论的角度证明了弱可压SPH方法在自由液面处能自动满足自由液面边界条件，且自由液面处核函数的截断不影响自由液面模拟的精度。</p>
+<h3 id="流固耦合动力学"><a class="header" href="#流固耦合动力学">流固耦合动力学</a></h3>
+<p>流固耦合动力学问题中最主要的难点在于刚体或弹性体运动与流场运动的耦合。
+SPH方法在模拟流固耦合问题时有两类方法，分别是：<br>
+（1）采用纯粒子法对流场和固体结构进行统一建模；<br>
+（2）SPH方法与其它数值方法（如有限元）耦合计算。</p>
+<p>SPH方法在模拟剧烈流固耦合问题中已经取得了很大进步，但是考虑结果表明边界层效应的流固耦合SPH方法较为少见。</p>
+<p>采取自适应粒子细化、聚合技术，在提高局部计算精度的基础上，减小总计算量，为较大规模船舶与海洋工程水动力学问题的数值计算提供技术支撑。</p>
+<h3 id="多相流"><a class="header" href="#多相流">多相流</a></h3>
+<p>SPH方法基于拉格朗日观点，在模拟多相流问题时无需特意追踪水气界面，而且模拟多相流界面的破碎和融合时，无需额外的人工干预。</p>
+<p>在物体入水研究中，空气的卷入对入水过程的运动和载荷特性有较大的影响。而且，在多相流SPH方法中，受空气粒子密度较小的影响，时间步会比单相流（水）SPH方法中小很多。</p>
+<p>比如，时间步长满足${^{[3]}}$，</p>
+<p>$$\Delta{t} \le \lambda\frac{\rm{particle\ diameter}}{\max{v_i}}$$</p>
+<ul>
+<li>比粒子速度大得多；</li>
+<li>根据稳定性、精度需求尽量小；</li>
+<li>CFL（Courant–Friedrichs–Lewy）条件是上界；</li>
+<li>推荐尺度选择：$\lambda \approx 0.4$；</li>
+<li>在模拟过程中自适应时间步。</li>
+</ul>
+<h2 id="解决方案"><a class="header" href="#解决方案">解决方案</a></h2>
+<p>粒子自适应细化、聚合技术。采取自适应粒子细化、聚合技术，在提高局部计算精度的基础上，减小总计算量，为较大规模船舶与海洋工程水动力学问题的数值计算提供技术支撑。</p>
+<h2 id="参考文献"><a class="header" href="#参考文献">参考文献</a></h2>
+<p>[1] 孙鹏楠. 物体与自由液面耦合作用的光滑粒子流体动力学方法研究.<br>
+[2] SPHysics.<br>
+[3] <a href="https://interactivecomputergraphics.github.io/SPH-Tutorial/slides/01_intro_foundations_neighborhood.pdf">Introduction, Foundations, Neighborhood Search. Page42</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../课程作业文档实例/有限粒子法.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../课程作业文档实例/有限粒子法.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>
