@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>从傅里叶计算地球温度说起.md - 高等水动力学作业</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../favicon.svg">
+                        <link rel="shortcut icon" href="../favicon.png">
+                <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+                <link rel="stylesheet" href="../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> 关于</a></li><li class="chapter-item expanded "><a href="../课堂笔记/index.html"><strong aria-hidden="true">2.</strong> 课堂笔记</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../课堂笔记/第一课.html"><strong aria-hidden="true">2.1.</strong> 第一课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第二课.html"><strong aria-hidden="true">2.2.</strong> 第二课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第三课.html"><strong aria-hidden="true">2.3.</strong> 第三课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第四课.html"><strong aria-hidden="true">2.4.</strong> 第四课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第五课.html"><strong aria-hidden="true">2.5.</strong> 第五课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第六课.html"><strong aria-hidden="true">2.6.</strong> 第六课.md</a></li><li class="chapter-item expanded "><a href="../课堂笔记/第七课.html"><strong aria-hidden="true">2.7.</strong> 第七课.md</a></li></ol></li><li class="chapter-item expanded "><a href="../课程作业文档实例/index.html"><strong aria-hidden="true">3.</strong> 课程作业文档实例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../课程作业文档实例/研究背景.html"><strong aria-hidden="true">3.1.</strong> 研究背景.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/流体控制方程.html"><strong aria-hidden="true">3.2.</strong> 流体控制方程.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/光滑、粒子、NS方程.html"><strong aria-hidden="true">3.3.</strong> 光滑、粒子、NS方程.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/SPH方法的流体控制方程.html"><strong aria-hidden="true">3.4.</strong> SPH方法的流体控制方程.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/直接数值模拟和粒子搜索.html"><strong aria-hidden="true">3.5.</strong> 直接数值模拟和粒子搜索.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/有限粒子法.html"><strong aria-hidden="true">3.6.</strong> 有限粒子法.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/边界处理和多相模拟.html"><strong aria-hidden="true">3.7.</strong> 边界处理和多相模拟.md</a></li><li class="chapter-item expanded "><a href="../课程作业文档实例/从傅里叶计算地球温度说起.html" class="active"><strong aria-hidden="true">3.8.</strong> 从傅里叶计算地球温度说起.md</a></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">高等水动力学作业</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="第四次作业从傅里叶计算地球温度说起题目待定"><a class="header" href="#第四次作业从傅里叶计算地球温度说起题目待定">第四次作业：从傅里叶计算地球温度说起（题目待定）</a></h1>
+<p>在这次作业的时候，网页引擎已经被换成mdbook来构建了。</p>
+<p>老师让我们讲一讲关于2021年诺贝尔物理学奖获得者的内容，因为气象与流体力学是有着紧密联系的。</p>
+<p>这次的仓库更改，发现GitHub不适合存储pptx等office文档，还是以pdf为优。</p>
+<h2 id="概要"><a class="header" href="#概要">概要</a></h2>
+<p>我之前在B站看到以为女生出的一个视频，讲的就是从傅里叶到温室效应，刚好与我这次要讲的、感兴趣的是一致的，而且由于各种不可抗因素，我没有很多时间来准备这次
+课上汇报，我明天早上汇报，我现在（晚上8点）才开始准备汇报内容。</p>
+<h2 id="温室效应"><a class="header" href="#温室效应">温室效应</a></h2>
+<p>温室效应（英语：Greenhouse effect）是指行星的大气层因为吸收辐射能量，使得行星表面升温的效应。由于温室效应，行星表面温度会比没有大气层时的温度要高$^{[1][2]}$。以往认为其机制类似温室使其中气温上升的机制，故名为“温室效应”。不少研究指出，人为因素使地球上的温室效应异常加剧，而造成全球暖化的效应。</p>
+<p><img src="https://tse1-mm.cn.bing.net/th/id/R-C.15e7f80adca48f2bfba97e3e816df7b8?rik=K4QpZO%2bRlFUpHA&amp;riu=http%3a%2f%2fwww.lstek.cn%2fattached%2fty%2fty17042409.jpg&amp;ehk=g156bv42SS41G34pZPGfsU3suFDiS%2fK%2fTimXJPx7Vcg%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" alt="太阳光谱能量" /></p>
+<p><img src="https://inews.gtimg.com/newsapp_bt/0/10172401353/1000" alt="温室效应" /></p>
+<h2 id="傅里叶变换热传导方程与温室效应"><a class="header" href="#傅里叶变换热传导方程与温室效应">傅里叶变换、热传导方程与温室效应</a></h2>
+<h3 id="热传导方程的求解"><a class="header" href="#热传导方程的求解">热传导方程的求解</a></h3>
+<p>$$\frac{\partial{u}}{\partial{t}}=k\frac{\partial^2{u}}{\partial{x^2}}$$</p>
+<p>其中，u是温度，t是时间，x是空间坐标，其它是比例系数。</p>
+<p>任意一个热传导问题，都由三部分组成：控制方程、边界条件（空间）、初始条件（时间）。</p>
+<p>傅里叶：</p>
+<p>对简单和原始问题的考虑是发现自然现象法则的最明确的方法之一，并且正如我们看到的，在科学史上，所有理论都是根据这种方法形成的。</p>
+<p>一维问题，直接分离变量；
+二维问题，令$\partial{u}/\partial{t}=0$，利用分离变量法求解，由于三角函数的正交性。</p>
+<p>由此，傅里叶得出傅里叶级数。</p>
+<h3 id="傅里叶对地球温度的求解"><a class="header" href="#傅里叶对地球温度的求解">傅里叶对地球温度的求解</a></h3>
+<p>背景：1901年，诺奖首次颁发；1906年，人类发现地核；1936年，人类发现地核有内核、外核。</p>
+<p>1827回忆录中记录了傅里叶的思考：是什么控制了地球的温度？为什么黑夜的一面不会冰冷刺骨？</p>
+<p>他考虑了三种热源：太阳、地球的原始热量、与外空间的热交换，并在之后的日子逐渐冷却。</p>
+<p>他注意到每深40米，温度会增加一度。这种地热形成与地球诞生之日，傅里叶认为地热对地表温度影响很小。（各地观测到的地热基本相同，且不随时间显著变化）</p>
+<p><img src="https://sw.cool3c.com/article/2019/4f7d8298-7884-466c-9036-ffb5d0f58183.jpg?fit=max&amp;w=2400&amp;q=80" alt="地核" /></p>
+<p>傅里叶认为外太空温度为-70°C（实际上，外太空接近决定零度，则被认为是宇宙大爆炸留下的残余温度），以此为边界条件。</p>
+<p>但这不影响傅里叶的分析，并计算了太阳照射时的理论温度分布，计算显示，被照射处与未被照射处温差巨大，远远大于实际的日温度波动，无疑与实际不符。</p>
+<p>傅里叶考虑到，地球表面的气体可能影响了温度分布，他考虑了一种玻璃罩子模型，几层玻璃盖子依次嵌套，大气有这种类似“玻璃罩”作用，傅里叶大概是第一个想到将大气的不均匀吸热视为对地面温度产生影响的人。</p>
+<p>1896年化学家S'Arrhenius发现二氧化碳和水的红外线吸收效应，他证明了傅里叶的假设，并进行了实验，他在论文中预测了今天温室效应的发生。</p>
+<h2 id="参考资料"><a class="header" href="#参考资料">参考资料</a></h2>
+<ol>
+<li>维基百科：温室效应. (https://zh.wikipedia.org/wiki/%E6%B8%A9%E5%AE%A4%E6%95%88%E5%BA%94)</li>
+<li>傅里叶变换、热传导方程与温室效应（解说+字幕！）(https://www.bilibili.com/video/BV1NJ411b7EZ?spm_id_from=333.999.0.0)</li>
+<li>Annex II Glossary. Intergovernmental Panel on Climate Change. [2016-08-20].</li>
+<li>A concise description of the greenhouse effect is given in the Intergovernmental Panel on Climate Change Fourth Assessment Report, &quot;What is the Greenhouse Effect?&quot; FAQ 1.3 - AR4 WGI Chapter 1: Historical Overview of Climate Change Science, IIPCC Fourth Assessment Report, Chapter 1, page 115: &quot;To balance the absorbed incoming [solar] energy, the Earth must, on average, radiate the same amount of energy back to space. Because the Earth is much colder than the Sun, it radiates at much longer wavelengths, primarily in the infrared part of the spectrum (see Figure 1). Much of this thermal radiation emitted by the land and ocean is absorbed by the atmosphere, including clouds, and reradiated back to Earth. This is called the greenhouse effect.&quot;
+Stephen H. Schneider, in Geosphere-biosphere Interactions and Climate, Lennart O. Bengtsson and Claus U. Hammer, eds., Cambridge University Press, 2001, ISBN 0-521-78238-4, pp. 90-91.
+E. Claussen, V. A. Cochran, and D. P. Davis, Climate Change: Science, Strategies, &amp; Solutions, University of Michigan, 2001. p. 373.
+A. Allaby and M. Allaby, A Dictionary of Earth Sciences, Oxford University Press, 1999, ISBN 0-19-280079-5, p. 244.</li>
+<li>傅里叶. 热的理论分析. 1822.</li>
+<li>百度百科：诺贝尔奖. (https://baike.baidu.com/item/%E8%AF%BA%E8%B4%9D%E5%B0%94%E5%A5%96/187878)</li>
+<li>知乎：地球为何有一颗炽热的心？地核最终会冷却吗？(https://www.zhihu.com/question/21028551)</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../课程作业文档实例/边界处理和多相模拟.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../课程作业文档实例/边界处理和多相模拟.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>
