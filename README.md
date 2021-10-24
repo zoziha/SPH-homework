@@ -2,6 +2,7 @@
 
 [![BSD-3](https://img.shields.io/github/license/zoziha/SPH-homework?color=pink)](LICENSE)
 [![mdbook](https://github.com/zoziha/SPH-homework/workflows/mdbook/badge.svg)](https://github.com/zoziha/SPH-homework/actions)
+[![wakatime](https://wakatime.com/badge/user/ca8e3153-da86-47e8-ba89-1fac0c842c19.svg)](https://wakatime.com/@ca8e3153-da86-47e8-ba89-1fac0c842c19)
 
 2021年，哈尔滨工程大学《高等水动力学》课程作业：“基于SPH方法的舰船波浪砰击模拟”。
 
