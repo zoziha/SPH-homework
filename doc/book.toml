@@ -4,3 +4,8 @@ language = "zh"
 multilingual = false
 src = "src"
 title = "高等水动力学作业"
+
+[output.html]
+mathjax-support = true
+git-repository-url = "https://github.com/zoziha/SPH-homework/tree/main/"
+edit-url-template = "https://github.com/zoziha/SPH-homework/edit/main/{path}"
