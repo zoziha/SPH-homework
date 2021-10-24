@@ -1,0 +1,6 @@
+[book]
+authors = ["zoziha"]
+language = "zh"
+multilingual = false
+src = "src"
+title = "高等水动力学作业"
